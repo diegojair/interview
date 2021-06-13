@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+
+body {
+  background: url(images/header.png) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+/*
+
+
+/* game  css*/
+#root {
+  display: flex;
+  width: 306px;
+  flex-wrap: wrap;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  border: 1px solid;
+  font-size: 45px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.win {
+  background: green;
+}
+.game {
+  background-color: lawngreen;
+  align-items: flex-end;
+}
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+.tik {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.return {
+  height: 50%;
+  width: 15%;
+  background-color: rgb(168, 199, 162);
+}
+.return-btn {
+  padding: 1%;
+  text-align: end;
+}
