@@ -121,14 +121,14 @@ body {
 }
 
 
-/*responsive grid rules*/
+/*responsive grid */
 @media only screen and (max-width: 596px) {
     .grid-container { 
         grid-template-columns: 1fr; }
     .span2, .span3, .span4 { grid-column: span 1; }
 }
 @media only screen and (min-width: 600px) {
-    .grid-container { grid-template-columns: 1fr 1fr; }
+    .grid-container { grid-template-columns: 1fr ; }
     .span3, .span4 { grid-column: span 2; }
 }
 @media only screen and (min-width: 900px) {
