@@ -4,7 +4,6 @@ const CIRCLE = "O"
 let turn = CROSS
 let winner = false
 
-//Rx.Observable.fromEvent(document, 'click').subscribe(() => console.log('Clicked!'));
 
 const handleClick = (boxId) => () =>
 {
