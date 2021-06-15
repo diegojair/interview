@@ -4,10 +4,11 @@
 
 char square[10] = {'o', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 int val = 1;
-int checkwin();
-void board();
-void validate(int, char);
-int resetgame();
+int checkwin();           //check the winning options  return  result
+void board();             // draw  the   board game
+void validate(int, char); // validate customer input  and  square  selected
+int resetgame();          // reset the  board   and validate exit of game
+
 int main()
 {
     int player = 1, i, choice, winner = 0;
@@ -16,7 +17,7 @@ int main()
     {
 
         board();
-        printf("\n\n            Player %d,  please select square :  ", player);
+        printf("\n\n            user %d,  please select square :  ", player);
         scanf("%d", &choice);
 
         mark = (player == 1) ? 'X' : 'O';
@@ -27,13 +28,15 @@ int main()
 
         if (winner == 1)
         {
-            printf("winner is  player %d \n\n", player);
+            printf("winner is  user %d \n\n", player);
             getch();
             winner = resetgame();
         }
         if (val == 0)
             player = (player == 2) ? 1 : 2;
-        /*validation for  no one  win the game */
+
+        /*validation if no one  win the game */
+
         if (square[1] != '1' && square[2] != '2' && square[3] != '3' &&
             square[4] != '4' && square[5] != '5' && square[6] != '6' &&
             square[7] != '7' && square[8] != '8' && square[9] != '9')
@@ -43,6 +46,7 @@ int main()
 
     return 0;
 }
+/* this funtion validate   info from customer and  the   square selected */
 void validate(int choice, char mark)
 {
     val = 1;
@@ -52,7 +56,10 @@ void validate(int choice, char mark)
     {
 
         if (square[choice] == 'X' || square[choice] == 'O')
-            printf("already selected");
+        {
+            printf("---------already selected please choose another one--------");
+            getch();
+        }
 
         else if (square[choice] != 'X' && square[choice] != 'O')
         {
@@ -67,14 +74,14 @@ void validate(int choice, char mark)
         val = 1;
     }
 }
-
+/* this funtion draw the board */
 void board()
 {
 
     system("cls");
     printf("\n\n\t                              DIEGO  APP   \n\n");
 
-    printf("--------------------------------Player 1 (X)  -  Player 2 (O)-------------------\n\n\n");
+    printf("--------------------------------User 1 (X)  -  user 2 (O)-------------------\n\n\n");
 
     printf("                                    |-----|-----|-----|\n");
     printf("                                    |  %c  |  %c  |  %c  | \n", square[1], square[2], square[3]);
@@ -86,7 +93,7 @@ void board()
     printf("                                    |  %c  |  %c  |  %c  |\n", square[7], square[8], square[9]);
     printf("                                    |-----|-----|-----|\n");
 }
-
+/* this funtion  check  posible  winning options*/
 int checkwin()
 {
     if (square[1] == square[2] && square[2] == square[3])
@@ -108,19 +115,19 @@ int checkwin()
 
     return 0;
 }
-
+/* this funtion wipe up   or exit  the game */
 int resetgame()
 {
     int flag = 0, i = 0;
-    char reset = 'a';
+    char reset;
 
     while (flag == 0)
     {
         printf("\n\n                  would like play a new game ? Y or N:  ");
         scanf("%c", &reset);
+
         if (reset == 'Y' || reset == 'y')
         {
-           
             for (i = 0; i < 10; i++)
                 square[i] = i + '0';
             val = 1;
