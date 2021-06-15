@@ -120,7 +120,7 @@ int resetgame()
         scanf("%c", &reset);
         if (reset == 'Y' || reset == 'y')
         {
-            printf("\n\n                  converta:  ");
+           
             for (i = 0; i < 10; i++)
                 square[i] = i + '0';
             val = 1;
